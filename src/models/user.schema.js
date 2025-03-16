@@ -4,6 +4,7 @@ import bcrypt from "bcryptjs";
 import JWT from "jsonwebtoken";
 import config from "../config/index.js";
 import crypto from "crypto";
+import Collection from "./collection.schema.js"
 
 const userSchema = mongoose.Schema({
     name : {
@@ -66,8 +67,9 @@ userSchema.methods = {
         this.forgotPasswordExpiry = Date.now() + 20*60*1000
 
         return forgotToken;
-        
-    }
+
+    },
+
 }
 
 
