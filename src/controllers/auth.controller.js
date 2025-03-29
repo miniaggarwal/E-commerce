@@ -94,6 +94,23 @@ export const logout = asyncHandler(async(req,res,next) =>{
 
 
 
+export const getProfile = asyncHandler(async(req,res)=>{
+
+    const {user} = req;
+
+    if(!user){
+        throw new CustomError("User not found")
+    }
+
+    res.status(200).json({
+        success : true,
+        user
+    })
+
+})
+
+
+
 
 
 
